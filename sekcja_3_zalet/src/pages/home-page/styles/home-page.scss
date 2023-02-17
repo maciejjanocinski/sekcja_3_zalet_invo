@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+
+
+$blue: #3D63AC;
+$green: #428A2F;
+$golden: #B09E3D;
+$light-blue: #E4E9F3;
+$light-green: #E5EFE2;
+$light-yellow: #F4F1E4;
+
+$rounding: 12px;
+$mobile: 375px;
+$tablet: 834px;
+
+:root {
+    --default-large-font-size: 32px;
+    --default-medium-font-size: 16px;
+    --default-small-font-size: 12px;
+
+    --default-large-font-weight: 700;
+    --default-medium-font-size: 600;
+    --default-small-font-size: 400;
+
+    //  --width: 100%;
+    --height: 100%;
+
+    --box-width: 1136px;
+    --box-height: 456px;
+
+    --direction: row;
+    --img-width: 72px;
+
+    --margin-big: 32px;
+    --margin-medium: 24px;
+    --margin-small: 16px;
+
+    --wrapper-padding-big: 180px;
+    --wrapper-padding-small: 152px;
+
+    --button-width: 132px;
+    --position-button: absolute;
+    --margin-btn-x: 0px --margin-btn-y: 0px;
+    --bottom-h: 104px;
+    --display: grid;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: $tablet) {
+    :root {
+        --default-large-font-size: 32px;
+        --default-medium-font-size: 16px;
+        --default-small-font-size: 12px;
+
+        --default-large-font-weight: 700;
+        --default-medium-font-size: 600;
+        --default-small-font-size: 400;
+
+        --width: 90%;
+        --height: auto;
+
+        --box-width: 1136px;
+        --box-height: 1194px;
+
+
+        --direction: column;
+        --img-width: 72px;
+
+        --margin-big: 24px;
+        --margin-medium: 16px;
+        --margin-small: 8px;
+
+        --wrapper-padding-big: 120px;
+        --wrapper-padding-small: 41px;
+
+        --button-width: 128px;
+        --position-button: static;
+
+        --margin-btn-x: 24px;
+        --margin-btn-y: 24px;
+        --bottom-h: 0;
+        --display: flex;
+    }
+
+}
+
+
+
+@media only screen and (max-width: $mobile) {
+    :root {
+        --default-large-font-size: 26px;
+        --default-medium-font-size: 14px;
+        --default-small-font-size: 12px;
+
+        --default-large-font-weight: 700;
+        --default-medium-font-size: 400;
+        --default-small-font-size: 400;
+
+        --width: 100%;
+        --height: auto;
+
+        --box-width: 375px;
+        --box-height: 1151px;
+
+        --direction: column;
+        --img-width: 48px;
+
+        --margin-big: 16px;
+        --margin-medium: 16px;
+        --margin-small: 8px;
+
+        --wrapper-padding-big: 21px;
+        --wrapper-padding-small: 16px;
+
+        --button-width: 128px;
+        --position-button: static;
+
+        --margin-btn-x: 16px;
+        --margin-btn-y: 24px;
+        --bottom-h: 0;
+        --display: flex;
+    }
+
+}
+
+
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    width: auto;
+    min-height: 100vh;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+#home-page {
+    display: var(--display);
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 32.5% 32.5% 32.5%;
+
+    grid-gap: 16px;
+
+    padding: 0;
+    width: var(--box-width);
+    height: var(var(--box-height));
+    margin: var(--wrapper-padding-big) var(--wrapper-padding-small) var(--wrapper-padding-big) var(--wrapper-padding-small); //can be changed to padding if needed
+
+
+    flex-direction: var(--direction);
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+
+    .box-component {
+        position: relative;
+        width: var(--width);
+        height: 100%; //var(--height);
+        margin: 0;
+        border-radius: $rounding;
+
+
+        &__image {
+            width: var(--img-width);
+            margin: var(--margin-big) var(--margin-big) var(--margin-medium) var(--margin-big);
+        }
+
+        &__header {
+            font-size: var(--default-large-font-size);
+            font-weight: var(--default-large-font-weight);
+            line-height: 1.2em;
+            margin: 0 var(--margin-big) var(--margin-small) var(--margin-big);
+        }
+
+        &__text {
+            margin: 0 var(--margin-big) 0 var(--margin-big);
+            letter-spacing: -0.03em;
+            line-height: 1.4em;
+            font-size: var(--default-medium-font-size);
+        }
+
+        &__button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            position: var(--position-button);
+            left: var(--margin-big);
+            bottom: var(--margin-big);
+            height: 48px;
+            width: var(--button-width);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.03em;
+            background-color: white;
+            border: none;
+            border-radius: 200px;
+            line-height: 18px;
+            margin: var(--margin-btn-y) var(--margin-btn-x) var(--margin-btn-y) var(--margin-btn-x);
+        }
+
+        &__bottom-margin {
+            height: var(--bottom-h);
+        }
+
+        &__arrow {
+            width: 14px;
+            height: 12px;
+        }
+
+        &__button:hover {
+            cursor: pointer;
+            color: $blue;
+            transition: all 0.1s ease-in-out;
+        }
+
+        &__button:hover img {
+            filter: invert(48%) sepia(100%)hue-rotate(194deg);
+            transition: filter 0.1s ease-in-out;
+        }
+
+        &__button:active {
+            cursor: pointer;
+            color: $blue;
+        }
+
+        &__button--green:active {
+            background-color: $light-green;
+        }
+
+        &__button--blue:active {
+            background-color: $light-blue;
+        }
+
+        &__button--yellow:active {
+            background-color: $light-yellow;
+        }
+
+        &--green {
+            background-color: $light-green;
+        }
+
+
+        &--blue {
+            background-color: $light-blue;
+        }
+
+        &--yellow {
+            background-color: $light-yellow;
+        }
+    }
+}
